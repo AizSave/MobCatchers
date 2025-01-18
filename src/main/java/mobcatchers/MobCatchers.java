@@ -6,6 +6,8 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.RecipeTechRegistry;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.WormMobBody;
+import necesse.entity.mobs.hostile.FollowingWormMobBody;
+import necesse.entity.mobs.hostile.FollowingWormMobHead;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.inventory.item.Item;
 import necesse.inventory.recipe.Ingredient;
@@ -22,13 +24,7 @@ public class MobCatchers {
         MobRegistry.getMobs().forEach(
                 m -> {
                     Mob mob = MobRegistry.getMob(m.getStringID(), null);
-                    if (
-                            (
-                                    mob.isHostile || mob.isHuman || mob.isBoss()
-                            )
-                                    && !(mob instanceof WormMobBody)
-                                    && !(mob instanceof AttackingFollowingMob)
-                    ) {
+                    if (!(mob instanceof WormMobBody) && !(mob instanceof AttackingFollowingMob)) {
                         Item.Rarity rarity;
                         if(mob.getHealth() >= 500) {
                             rarity = Item.Rarity.LEGENDARY;
