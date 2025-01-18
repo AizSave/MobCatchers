@@ -1,0 +1,11 @@
+[item]
+catchedmob=Catched Mob
+catchedmobname=Catched <mob>
+mobessence=<mob> Essence
+anymobessence=Any Mob Essence
+
+mobcatcher=The Mob Catcher
+
+[itemtooltip]
+catchedmob=Use to release a <mob>
+mobcatcher=You can catch any mob as long as you have its essence in your inventory!
