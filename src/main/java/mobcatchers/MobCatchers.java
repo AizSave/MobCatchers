@@ -8,7 +8,13 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.WormMobBody;
 import necesse.entity.mobs.hostile.FollowingWormMobBody;
 import necesse.entity.mobs.hostile.FollowingWormMobHead;
+import necesse.entity.mobs.summon.MinecartMob;
+import necesse.entity.mobs.summon.SummonedMob;
+import necesse.entity.mobs.summon.WoodBoatMob;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
+import necesse.entity.mobs.summon.summonFollowingMob.mountFollowingMob.MinecartMountMob;
+import necesse.entity.mobs.summon.summonFollowingMob.mountFollowingMob.MountFollowingJumpingMob;
+import necesse.entity.mobs.summon.summonFollowingMob.mountFollowingMob.MountFollowingMob;
 import necesse.inventory.item.Item;
 import necesse.inventory.recipe.Ingredient;
 import necesse.inventory.recipe.Recipe;
@@ -24,7 +30,8 @@ public class MobCatchers {
         MobRegistry.getMobs().forEach(
                 m -> {
                     Mob mob = MobRegistry.getMob(m.getStringID(), null);
-                    if (!(mob instanceof WormMobBody) && !(mob instanceof AttackingFollowingMob)) {
+                    if (!(mob instanceof WormMobBody) && !(mob instanceof AttackingFollowingMob) && !(mob instanceof MountFollowingMob)
+                    && !(mob instanceof SummonedMob)) {
                         Item.Rarity rarity;
                         if(mob.getHealth() >= 500) {
                             rarity = Item.Rarity.LEGENDARY;
