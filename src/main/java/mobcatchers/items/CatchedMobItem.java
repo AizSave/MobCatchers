@@ -61,7 +61,7 @@ public class CatchedMobItem extends ConsumableItem {
                 summonX = player.x + 300 * (float) Math.cos(angle);
                 summonY = player.y + 300 * (float) Math.sin(angle);
             }
-            level.entityManager.addMob(MobRegistry.getMob(summonMob, level), summonX, summonY);
+            summon(level, summonX, summonY);
         }
 
         if (this.singleUse) {
@@ -69,6 +69,10 @@ public class CatchedMobItem extends ConsumableItem {
         }
 
         return item;
+    }
+
+    public void summon(Level level, float x, float y) {
+        level.entityManager.addMob(MobRegistry.getMob(summonMob, level), x, y);
     }
 
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {

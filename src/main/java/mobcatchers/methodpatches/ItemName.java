@@ -24,6 +24,8 @@ public class ItemName {
         String itemStringID = item.getStringID();
         if (itemStringID.endsWith("_catched")) {
             displayName = Localization.translate("item", "catchedmobname", "mob", MobRegistry.getLocalization(((CatchedMobItem) item).summonMob).translate());
+        } else if (itemStringID.endsWith("_brainwashed")) {
+            displayName = Localization.translate("item", "brainwashedmobname", "mob", MobRegistry.getLocalization(((CatchedMobItem) item).summonMob).translate());
         } else if (itemStringID.endsWith("_essence")) {
             displayName = Localization.translate("item", "mobessence", "mob", MobRegistry.getLocalization(((MobEssence) item).mob).translate());
         }

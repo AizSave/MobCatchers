@@ -68,11 +68,6 @@ public class MobEssence extends MatItem {
         super.drawIcon(item, perspective, x, y, size, color);
     }
 
-    @Override
-    public void draw(InventoryItem item, PlayerMob perspective, int x, int y, boolean inInventory) {
-        super.draw(item, perspective, x, y, inInventory);
-    }
-
     public static void registerEssence(Rarity rarity, String mob) {
         if(!isRegistered(mob)) {
             ItemRegistry.registerItem(mob + "_essence", new MobEssence(rarity, mob), 0F, true);

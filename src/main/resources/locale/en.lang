@@ -1,11 +1,18 @@
 [item]
 catchedmob=Catched Mob
 catchedmobname=Catched <mob>
+brainwashedmob=Brainwashed Mob
+brainwashedmobname=Brainwashed <mob>
 mobessence=<mob> Essence
 anymobessence=Any Mob Essence
-
 mobcatcher=The Mob Catcher
+brainwashshard=Brainwash Shard
 
 [itemtooltip]
 catchedmob=Use to release a <mob>
+brainwashedmob=This mob is brainwashed and will fight for you
 mobcatcher=You can catch any mob as long as you have its essence in your inventory!
+brainwashertip=Can be used to brainwash catched mobs with Brainwash Shards
+
+[object]
+brainwasher=Brainwasher
