@@ -48,11 +48,12 @@ public class CatchedMobItem extends ConsumableItem {
     }
 
     @Override
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
         return null;
     }
 
-    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    @Override
+    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
         if (level.isServer()) {
             float summonX = x;
             float summonY = y;
@@ -75,12 +76,14 @@ public class CatchedMobItem extends ConsumableItem {
         level.entityManager.addMob(MobRegistry.getMob(summonMob, level), x, y);
     }
 
+    @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "catchedmob", "mob", MobRegistry.getLocalization(summonMob).translate()));
         return tooltips;
     }
 
+    @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "catchedmob");
     }
@@ -90,6 +93,7 @@ public class CatchedMobItem extends ConsumableItem {
         this.itemTexture = GameTexture.fromFile("mobs/icons/" + summonMob);
     }
 
+    @Override
     public GameMessage getLocalization(InventoryItem item) {
         GNDItemMap gndData = item.getGndData();
         if (gndData.hasKey("name")) {

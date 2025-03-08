@@ -29,6 +29,7 @@ public class BrainwashedMobItem extends CatchedMobItem {
         return super.getBrokerValue(item) * 2;
     }
 
+    @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "brainwashedmob"));
@@ -40,6 +41,7 @@ public class BrainwashedMobItem extends CatchedMobItem {
         level.entityManager.addMob(MobRegistry.getMob(summonMob + "_brainwashed", level), x, y);
     }
 
+    @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "brainwashedmob");
     }
@@ -50,6 +52,7 @@ public class BrainwashedMobItem extends CatchedMobItem {
         super.drawIcon(item, perspective, x, y, size, color);
     }
 
+    @Override
     public GameMessage getLocalization(InventoryItem item) {
         GNDItemMap gndData = item.getGndData();
         if (gndData.hasKey("name")) {

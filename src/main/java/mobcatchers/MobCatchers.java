@@ -95,7 +95,7 @@ public class MobCatchers {
                 m -> {
                     try {
                         Mob mob = MobRegistry.getMob(m.getStringID(), null);
-                        if (!m.getStringID().endsWith("_brainwashed") && mob.canTakeDamage() || netToolItem.canHitMob(mob, null) && !(mob instanceof WormMobBody) && !(mob instanceof SummonedMob)) {
+                        if (mob != null && !m.getStringID().endsWith("_brainwashed") && mob.canTakeDamage() || netToolItem.canHitMob(mob, null) && !(mob instanceof WormMobBody) && !(mob instanceof SummonedMob)) {
                             Item.Rarity rarity;
                             if (mob.getHealth() >= 500) {
                                 rarity = Item.Rarity.LEGENDARY;
